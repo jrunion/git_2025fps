@@ -2,8 +2,9 @@ extends CharacterBody3D
 
 
 const SPEED = 10.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 18
 const SENSITIVITY = 0.02
+const WEIGHT = 4
 
 @onready var head = $Face
 @onready var camera = $Face/Camera3D
@@ -22,7 +23,7 @@ func _unhandled_input(event):
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * WEIGHT
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
