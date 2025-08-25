@@ -2,14 +2,17 @@ extends CharacterBody3D
 
 var player = null
 
+
 const SPEED = 4
 
 @export var player_path : NodePath
 
 @onready var nav_agent = $NavigationAgent3D
+@onready var detectedPlayer: bool 
 
 #called when node enters scene tree for the first time
 func _ready():
+	detectedPlayer = false
 	player = get_node(player_path)
 
 

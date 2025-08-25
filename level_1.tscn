@@ -231,6 +231,21 @@ mesh = SubResource("BoxMesh_rka8t")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="enemy"]
 path_height_offset = 0.15
 
+[node name="RayCast3D" type="RayCast3D" parent="enemy"]
+transform = Transform3D(1, 0, 0, 0, -0.70118, -0.666805, 0, 7.30207, -0.0640298, -0.00761545, 0.286642, -0.356143)
+debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
+debug_shape_thickness = 4
+
+[node name="RayCast3D2" type="RayCast3D" parent="enemy"]
+transform = Transform3D(0.862602, 3.694, -0.0323916, 0, -0.70118, -0.666805, -0.505883, 6.29878, -0.0552322, -0.00761545, 0.286642, -0.356143)
+debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
+debug_shape_thickness = 4
+
+[node name="RayCast3D3" type="RayCast3D" parent="enemy"]
+transform = Transform3D(0.877372, -3.50361, 0.0307221, 0, -0.70118, -0.666805, 0.47981, 6.40664, -0.056178, -0.00761545, 0.286642, -0.356143)
+debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
+debug_shape_thickness = 4
+
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 0)
 script = ExtResource("1_hbghi")
