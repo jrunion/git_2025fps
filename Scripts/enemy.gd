@@ -13,7 +13,7 @@ const WEIGHT = 5
 
 #called when node enters scene tree for the first time
 func _ready():
-	detectedPlayer = false
+	detectedPlayer = true
 	player = get_node(player_path)
 
 
