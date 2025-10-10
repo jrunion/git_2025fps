@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://jpvtct2x8lv"]
+[gd_scene load_steps=19 format=3 uid="uid://jpvtct2x8lv"]
 
 [ext_resource type="Script" uid="uid://3xjj2xovho60" path="res://Scripts/player.gd" id="1_hbghi"]
 [ext_resource type="Script" uid="uid://feqyd778pir5" path="res://Scripts/world.gd" id="1_hn12h"]
 [ext_resource type="Script" uid="uid://b5sexq6om6lwh" path="res://Scripts/enemy.gd" id="2_hbghi"]
-[ext_resource type="Script" uid="uid://bklkxl2577bn5" path="res://Scripts/state_enemy.gd" id="3_ihfcg"]
+[ext_resource type="Script" uid="uid://dmx203sl3ghoa" path="res://Scripts/enemy_wander.gd" id="3_rka8t"]
+[ext_resource type="Script" uid="uid://btj15gym6kyh5" path="res://Scripts/state_machine_enemy.gd" id="4_5hph3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilcil"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -247,11 +248,16 @@ transform = Transform3D(0.877372, -3.50361, 0.0307221, 0, -0.70118, -0.666805, 0
 debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
 debug_shape_thickness = 4
 
-[node name="StateTracker" type="Node" parent="enemy"]
-script = ExtResource("3_ihfcg")
+[node name="EnemyWander" type="Node" parent="enemy"]
+script = ExtResource("3_rka8t")
+metadata/_custom_type_script = "uid://dmx203sl3ghoa"
+
+[node name="EnemyStateMachine" type="Node" parent="enemy" node_paths=PackedStringArray("InitialState")]
+script = ExtResource("4_5hph3")
+InitialState = NodePath("../EnemyWander")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 16.6798)
 script = ExtResource("1_hbghi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
