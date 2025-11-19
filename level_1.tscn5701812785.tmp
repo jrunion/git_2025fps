@@ -51,7 +51,7 @@ albedo_color = Color(0.22, 0, 0.187, 1)
 script = ExtResource("1_hn12h")
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 1.81845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 17.029678)
 script = ExtResource("1_hbghi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]

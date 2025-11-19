@@ -1,5 +1,5 @@
 extends Node
-class_name State
+#class_name State
 signal Transitioned(state: State, new_state_name: String)
 
 
