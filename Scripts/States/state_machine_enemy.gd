@@ -1,11 +1,10 @@
 extends Node
-#class_name StateMachine
+class_name StateMachineEnemy
 
 @export var InitialState: State
 
 var current_state: State = null
 var states: Dictionary = {}
-
 
 func _ready() -> void:
 	for child in get_children():
@@ -25,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_process(delta)
 
-
 func on_child_transitioned(state, new_state_name):
 	if state != current_state:
 		return
@@ -36,3 +34,4 @@ func on_child_transitioned(state, new_state_name):
 		current_state.exit()
 	
 	new_state.enter()
+	current_state = new_state

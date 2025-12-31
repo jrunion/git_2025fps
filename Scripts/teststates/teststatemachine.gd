@@ -11,7 +11,6 @@ func _ready() -> void:                                              #_ready is t
 		if child is TestState:                                      #checks if  children are test states
 			states[child.name.to_lower()] = child                   #adds  that node to the states array
 			child.Transitioned.connect(on_child_transitioned)       #connects all states that are children of the state machine
-	
 	if InitialState:                                                #if there is an initial state
 		current_state= InitialState                                 #current state is initial state
 		InitialState.enter()                                        #go to and run the initial state script

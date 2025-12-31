@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://k4cscusgi7x2"]
+
+[ext_resource type="PackedScene" uid="uid://y13x0tww5xsl" path="res://shapes/viewshape.glb" id="1_i4h67"]
+
+[node name="viewshape" instance=ExtResource("1_i4h67")]

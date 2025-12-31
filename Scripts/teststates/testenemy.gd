@@ -5,7 +5,8 @@ extends CharacterBody3D                                 #extends Character Body 
 @export var AttackReach: float = 0.5                    #sets attack reach but allows it  to be changed in editor
 @export var ChaseDistance: float = 10.0                  #sets chase distance but allows it to be changed in editor
 
-@onready var nav_agent = $NavigationAgent3D             #the nav agent is a NavigtationAgent3d type
+@onready var nav_agent = $NavigationAgent3D 
+@onready var eyesight: Area3D = $LineOfSight            #the nav agent is a NavigtationAgent3d type
 
 
 var player = null                                       #sets player to null

@@ -3,8 +3,8 @@ class_name TestWander                                          #class name is te
 
 var  wander_direction: Vector3                                 #creates a vector3 var called wander direction
 var wander_time: float = 0.0                                   #creates a float called wander time
-
-@onready var enemy: CharacterBody3D = get_parent().get_parent()                    #creates an enemy at the start that is characterbody3D and is the parent of this childs parent
+@onready var sight: Area3D = $"../../LineOfSight"
+@onready var enemy: CharacterBody3D = get_parent().get_parent()                #creates an enemy at the start that is characterbody3D and is the parent of this childs parent
 var player: CharacterBody3D = null                                                 #creaates a characterbody3D var named player and its empty
 
 func _ready() -> void:
@@ -15,19 +15,21 @@ func randomize_variables():                                                     
 		wander_direction = Vector3(randf_range(-1.0,1.0), 0.0, randf_range(-1.0,1.0))
 	wander_time = randf_range(1.5,4)                                                          #wander time is a random float between 1.5 and 4
 
-
 func enter():                                                                                 #when you start, randomize variabled
 	randomize_variables()
 
 func process(delta: float):                                                               
+	var overlapping = sight.get_overlapping_bodies()
 	if wander_time < 0.0:                                                                    #if wander time falls below 0.0, randomize the variables
 		randomize_variables()
 	
-	
 	wander_time -= delta                                                                      #wander time is losing a a fraction of a second every frame
 	
-	if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:       #if the player is the chase distance from enemy or less, emit the signal that changes state to chase
-		emit_signal("Transitioned", self, "TestChase")
+	#if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:       #if the player is the chase distance from enemy or less, emit the signal that changes state to chase
+	if overlapping.size() > 0:
+		for overlap in overlapping:
+			if overlap.name == "Player":
+				emit_signal("Transitioned", self, "TestChase")
 
 func physics_process(_delta: float):                                                                               #enemy velocity is wander Direction * the enemy's walkspeed. so point toward the direction and move that fast
 	enemy.velocity = wander_direction * enemy.WalkSpeed

@@ -125,7 +125,7 @@ spot_range = 9.003
 spot_angle = 46.82
 
 [node name="enemy" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.013338, -5.73438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.013338, -5.73438)
 script = ExtResource("2_rka8t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemy"]
@@ -147,18 +147,23 @@ path_height_offset = 0.15
 
 [node name="RayCast3D" type="RayCast3D" parent="enemy"]
 transform = Transform3D(1, 0, 0, 0, -0.70118, -0.666805, 0, 7.30207, -0.0640298, -0.00761545, 0.286642, -0.356143)
+visible = false
 debug_shape_custom_color = Color(0.9529412, 0, 0.7019608, 1)
+debug_shape_thickness = 4
+
+[node name="RayCast3D2" type="RayCast3D" parent="enemy"]
+transform = Transform3D(0.862602, 3.694, -0.0323916, 0, -0.70118, -0.666805, -0.505883, 6.29878, -0.0552322, -0.00761545, 0.286642, -0.356143)
+debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
+debug_shape_thickness = 4
+
+[node name="RayCast3D3" type="RayCast3D" parent="enemy"]
+transform = Transform3D(0.877372, -3.50361, 0.0307221, 0, -0.70118, -0.666805, 0.47981, 6.40664, -0.056178, -0.00761545, 0.286642, -0.356143)
+visible = false
+debug_shape_custom_color = Color(0.953222, 4.81308e-05, 0.702386, 1)
 debug_shape_thickness = 4
 
 [node name="testhealthcomponent" type="Node" parent="enemy"]
 script = ExtResource("4_ihfcg")
-
-[node name="LineOfSight" type="Area3D" parent="enemy"]
-transform = Transform3D(0.1563828, 0, 0.9876965, 0, 1, 0, -0.9876965, 0, 0.1563828, 0, 0.41963387, -0.41680908)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy/LineOfSight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87486386, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_j7kpp")
 
 [node name="TestStateMachine" type="Node" parent="enemy" node_paths=PackedStringArray("InitialState")]
 script = ExtResource("5_5hph3")
@@ -170,6 +175,13 @@ metadata/_custom_type_script = "uid://bimobxww2dmj3"
 
 [node name="TestChase" type="Node" parent="enemy/TestStateMachine"]
 script = ExtResource("7_j7kpp")
+
+[node name="LineOfSight" type="Area3D" parent="enemy"]
+transform = Transform3D(0.1563828, 0, 0.9876965, 0, 1, 0, -0.9876965, 0, 0.1563828, 0, 0.41963387, -0.41680908)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy/LineOfSight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87486386, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_j7kpp")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_3hls8")
