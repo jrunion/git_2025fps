@@ -3,9 +3,11 @@ class_name TestWander                                          #class name is te
 
 var  wander_direction: Vector3                                 #creates a vector3 var called wander direction
 var wander_time: float = 0.0                                   #creates a float called wander time
-@onready var sight: Area3D = $"../../LineOfSight"
+
 @onready var enemy: CharacterBody3D = get_parent().get_parent()                #creates an enemy at the start that is characterbody3D and is the parent of this childs parent
-var player: CharacterBody3D = null                                                 #creaates a characterbody3D var named player and its empty
+@onready var sight: Area3D = enemy.get_node("LineOfSight")
+@onready var PlayerPointer: RayCast3D = sight.get_node("PlayerPointer")
+var player: CharacterBody3D = null                                                 #creates a characterbody3D var named player and its empty
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player") #Grab first node that is in the "Player" Group. This can be set when selecting a node, and choosing the Node tab next to inspector.
@@ -27,9 +29,13 @@ func process(delta: float):
 	
 	#if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:       #if the player is the chase distance from enemy or less, emit the signal that changes state to chase
 	if overlapping.size() > 0:
-		for overlap in overlapping:
-			if overlap.name == "Player":
-				emit_signal("Transitioned", self, "TestChase")
+		for overlap in overlapping:                                                            #Check every item that is overlapping
+			if overlap.name == "Player":                                                       #check if overlapped item has the name Player
+				PlayerPointer.look_at(player.global_position + Vector3(0,180,0))                 #point Raycast towards player 
+				if PlayerPointer.is_colliding():                                                #if the raycast is colliding with something
+					var collision = PlayerPointer.get_collider()                                #Collision is the 1st node being collided with
+					if collision.name  == "Player":                                             #if the collision name is player
+						emit_signal("Transitioned", self, "TestChase")                          #transition to chase
 
 func physics_process(_delta: float):                                                                               #enemy velocity is wander Direction * the enemy's walkspeed. so point toward the direction and move that fast
 	enemy.velocity = wander_direction * enemy.WalkSpeed

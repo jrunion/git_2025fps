@@ -53,23 +53,20 @@ albedo_color = Color(0.22, 0, 0.187, 1)
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_hn12h")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0210958, 4.767585)
-
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6789627, 10.218689)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94849, 10.719593)
 script = ExtResource("1_hbghi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020608187, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.365, 0)
 mesh = SubResource("CapsuleMesh_hn12h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141911, -0.011991978, 0.037739754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141911, 1.3324, 0.0377402)
 shape = SubResource("ConvexPolygonShape3D_ihfcg")
 
 [node name="Face" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21584821, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56024, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Face"]
 
@@ -128,7 +125,7 @@ spot_range = 9.003
 spot_angle = 46.82
 
 [node name="enemy" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8724194, -5.73438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.013338, -5.73438)
 script = ExtResource("2_rka8t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemy"]
@@ -158,8 +155,8 @@ transform = Transform3D(0.1563828, 0, 0.9876965, 0, 1, 0, -0.9876965, 0, 0.15638
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87486386, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_j7kpp")
 
-[node name="PlayerPointer" type="RayCast3D" parent="enemy/LineOfSight"]
-transform = Transform3D(-7.1511835e-08, -12, -4.790768e-08, 6.251763e-15, 5.2453663e-07, -1.096, 1.636, -5.2453663e-07, 2.094111e-15, -0.061110497, -0.13299179, 0.001965344)
+[node name="RayCast3D" type="RayCast3D" parent="enemy/LineOfSight"]
+transform = Transform3D(-4.7033453e-08, -7.891, -3.151591e-08, 4.1117952e-15, 3.4492655e-07, -0.721, 1.076, -3.4492655e-07, 1.3776042e-15, -0.061110497, -0.13299179, 0.001965344)
 debug_shape_custom_color = Color(0.9529412, 0, 0.7019608, 1)
 debug_shape_thickness = 4
 
@@ -229,11 +226,6 @@ size = Vector3(1, 2.03601, 1)
 
 [node name="building10" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(6.32802, 0, 0, 0, 4.48584, 0, 0, 0, 7.33638, -17.3522, 4.40551, 0)
-use_collision = true
-size = Vector3(1, 2.03601, 1)
-
-[node name="building26" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(6.32802, 0, 0, 0, 2.7793522, 0, 0, 0, 1.2288263, -1.9821267, 0.35590076, 0)
 use_collision = true
 size = Vector3(1, 2.03601, 1)
 
