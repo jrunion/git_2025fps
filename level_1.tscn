@@ -237,6 +237,21 @@ transform = Transform3D(6.32802, 0, 0, 0, 2.7793522, 0, 0, 0, 1.2288263, -1.9821
 use_collision = true
 size = Vector3(1, 2.03601, 1)
 
+[node name="building29" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(11.423631, 0, 0, 0, 2.7793522, 0, 0, 0, 1.2288263, -6.777823, 0.35590076, -14.994341)
+use_collision = true
+size = Vector3(1, 2.03601, 1)
+
+[node name="building27" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.54580694, 0, -1.2693155, 0, 2.7793522, 0, 10.49169, 0, 0.06603331, 2.1892343, 0.35590076, -8.280559)
+use_collision = true
+size = Vector3(1, 2.03601, 1)
+
+[node name="building28" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.5037527, 0, -1.2611492, 0, 2.7793522, 0, 9.68331, 0, 0.06560848, -8.280731, 0.35590076, -8.280559)
+use_collision = true
+size = Vector3(1, 2.03601, 1)
+
 [node name="building11" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(6.32802, 0, 0, 0, 4.48584, 0, 0, 0, 7.33638, -17.2494, 4.40551, 11.6432)
 use_collision = true
