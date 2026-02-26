@@ -11,7 +11,7 @@ func _ready():
 	
 
 func process(_delta: float):
-	#position += transform.basis * Vector3(0,0,-bulletSpeed) * _delta
+	# += transform.basis * Vector3(0,0,-bulletSpeed) * _delta
 	pass
 	#if hit
 	#if enemy

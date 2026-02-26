@@ -72,12 +72,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21584821, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Face" unique_id=387127516]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=877801987]
+[node name="hand" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=877801987]
 transform = Transform3D(0.27076674, 8.642985e-05, 0.067944385, -6.8107645e-11, 0.16024819, -0.0015044296, -0.04278354, 0.00054699474, 0.43000373, 0.3134551, -0.37746477, -0.60852623)
 mesh = SubResource("SphereMesh_hn12h")
 skeleton = NodePath("../Gun")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=737811874]
+[node name="arm" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=737811874]
 transform = Transform3D(0.27076674, 8.642984e-05, 0.067944385, -6.535114e-11, 0.16024819, -0.0015044296, -0.042783536, 0.00054699474, 0.43000373, 0.31345558, -0.37746453, -0.19726753)
 mesh = SubResource("BoxMesh_ihfcg")
 skeleton = NodePath("../Gun")
@@ -87,8 +87,8 @@ transform = Transform3D(0.148867, 8.65058e-05, 0.0964725, 0, 0.160389, -0.002136
 mesh = SubResource("BoxMesh_hn12h")
 skeleton = NodePath("../../..")
 
-[node name="RayCast3D" type="RayCast3D" parent="Player/Face/Camera3D/Gun" unique_id=1834492009]
-transform = Transform3D(5.820766e-11, 1.1920929e-07, 0.9999998, 0.9999998, -4.377216e-08, 5.820766e-11, 4.3713953e-08, 1, -4.0978193e-08, 0.36517143, -0.007505417, -0.5634918)
+[node name="Muzzle" type="Node3D" parent="Player/Face/Camera3D/Gun" unique_id=1424728626]
+transform = Transform3D(1, 0, 1.1920929e-07, 0, 0.9999998, 0, 0, -1.1641532e-10, 1, 0.13300514, -0.00724411, -0.5439358)
 
 [node name="testhealthcomponent" type="Node" parent="Player" unique_id=406663423]
 script = ExtResource("4_ihfcg")

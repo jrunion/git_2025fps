@@ -14,8 +14,11 @@ const WEIGHT = 4                                                        #creates
 @onready var roundsPerSecond: float = 0.25
 @onready var bulletTimer: float = 0
 
+@onready var bulletRange: float = 0
+
 @onready var head = $Face                                               #when starting, make the head variable the child named Face
 @onready var camera = $Face/Camera3D                                    #when starting, make the camera variable the Face's child named Camera 3D
+@onready var bulletStart = $Face/Camera3D/Gun/Muzzle                    #when starting, make the bullet start variable the end of the default gun
 
 func _ready():                                                          #when starting, set mouse input
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -29,10 +32,11 @@ func _unhandled_input(event):                                           #mouse m
 
 func process(delta: float):
 	if Input.is_action_just_pressed("ui_shoot"):       #If user is pressing the shoot button 
+		shoot()
 		if(bulletTimer >0):                            #if bullet timer is great than zero
 			bulletTimer -= delta                       #subtract bullet time per second
 		else:                                          
-			#shoot bullet
+			
 			bulletTimer = roundsPerSecond              #make bullet timer rounds per second
 			
 
@@ -56,3 +60,19 @@ func _physics_process(delta: float) -> void:                        #checks phys
 		velocity.z = 0
 
 	move_and_slide()
+	
+
+
+
+func shoot() -> void:
+	var space_state: PhysicsDirectBodyState3D = bulletStart.get_world_3D().direct_space_state
+	var ray_start: Vector3 = bulletStart.global_position
+	
+	var ray_direction: Vector3 = -bulletStart.global_basis.z
+	var ray_end:Vector3 = ray_start + ray_direction.normalized() * bulletRange
+	
+	var query:=PhysicsRayQueryParameters3D.create(ray_start,ray_end)
+	query.collide_with_bodies = true
+	var result: Dictionary = space_state.intersect_rauy(query)
+	
+	print(result)
