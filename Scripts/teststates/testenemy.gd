@@ -8,6 +8,8 @@ extends CharacterBody3D                                 #extends Character Body 
 @onready var nav_agent = $NavigationAgent3D 
 @onready var eyesight: Area3D = $LineOfSight            #the nav agent is a NavigtationAgent3d type
 
+@onready var starting_position: Vector3 = position
+
 
 var player = null                                       #sets player to null
 

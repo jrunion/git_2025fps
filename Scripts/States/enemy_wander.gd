@@ -20,13 +20,10 @@ func enter():
 
 func process(delta: float):
 	if wander_time < 0.0:
-		randomize_variables()
+		randomize_variables()                                       #at the end of the timer, randomize vriables again
 	
 	wander_time -= delta
 	
-	#change this to if the player is seen using probably the Raycast function
-	#if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:       #if the player is the chase distance from enemy or less, emit the signal that changes state to chase
-	#	emit_signal("Transitioned", self, "EnemyChase")
 
 func physics_process(_delta: float):                                                                               #enemy velocity is wander Direction * the enemy's walkspeed. so point toward the direction and move that fast
 	enemy.velocity = wander_direction * enemy.WalkSpeed
