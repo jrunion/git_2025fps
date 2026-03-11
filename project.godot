@@ -19,6 +19,17 @@ run/main_scene="uid://jpvtct2x8lv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scripts/": "purple",
+"res://levels/": "green",
+"res://models/": "pink",
+"res://scenes/": "gray",
+"res://shapes/": "orange"
+}
+
 [input]
 
 ui_forward={

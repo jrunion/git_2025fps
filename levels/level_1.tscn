@@ -1,25 +1,14 @@
 [gd_scene format=3 uid="uid://jpvtct2x8lv"]
 
-[ext_resource type="Script" uid="uid://3xjj2xovho60" path="res://Scripts/player.gd" id="1_hbghi"]
-[ext_resource type="Script" uid="uid://feqyd778pir5" path="res://Scripts/world.gd" id="1_hn12h"]
-[ext_resource type="Script" uid="uid://dkxy4fajtjkty" path="res://Scripts/teststates/testenemy.gd" id="2_rka8t"]
-[ext_resource type="Script" uid="uid://p8qe0c2vq2xb" path="res://Scripts/teststates/testattack.gd" id="4_ihfcg"]
-[ext_resource type="Script" uid="uid://bv38wlhrp2yx6" path="res://Scripts/teststates/teststatemachine.gd" id="5_5hph3"]
-[ext_resource type="Script" uid="uid://bimobxww2dmj3" path="res://Scripts/teststates/testwander.gd" id="6_j7kpp"]
-[ext_resource type="Script" uid="uid://d4gypcbublbby" path="res://Scripts/teststates/testchase.gd" id="7_j7kpp"]
-[ext_resource type="Script" uid="uid://b03k3gfkv5bfw" path="res://Scripts/teststates/testreturn.gd" id="8_bjebc"]
-[ext_resource type="PackedScene" uid="uid://dfsame4u536kq" path="res://models/trash.blend" id="9_5rr72"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hn12h"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ihfcg"]
-points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
-
-[sub_resource type="SphereMesh" id="SphereMesh_hn12h"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ihfcg"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_hn12h"]
+[ext_resource type="Script" uid="uid://feqyd778pir5" path="res://Scripts/world.gd" id="1_3sk1a"]
+[ext_resource type="Script" uid="uid://dkxy4fajtjkty" path="res://Scripts/teststates/testenemy.gd" id="3_5ot28"]
+[ext_resource type="Script" uid="uid://p8qe0c2vq2xb" path="res://Scripts/teststates/testattack.gd" id="4_aerfg"]
+[ext_resource type="Script" uid="uid://bv38wlhrp2yx6" path="res://Scripts/teststates/teststatemachine.gd" id="5_nmsli"]
+[ext_resource type="Script" uid="uid://bimobxww2dmj3" path="res://Scripts/teststates/testwander.gd" id="6_betor"]
+[ext_resource type="Script" uid="uid://d4gypcbublbby" path="res://Scripts/teststates/testchase.gd" id="7_vjtdm"]
+[ext_resource type="Script" uid="uid://b03k3gfkv5bfw" path="res://Scripts/teststates/testreturn.gd" id="8_bgw3c"]
+[ext_resource type="PackedScene" uid="uid://dqjcrqkdqo1jx" path="res://Assets/Player/player.tscn" id="9_3sk1a"]
+[ext_resource type="PackedScene" uid="uid://dfsame4u536kq" path="res://models/trash.blend" id="9_lrvbd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilcil"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -53,45 +42,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 albedo_color = Color(0.22, 0, 0.187, 1)
 
 [node name="Level1" type="Node3D" unique_id=2037446227]
-script = ExtResource("1_hn12h")
-
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1754872859 groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9675455, 1.6789627, 18.163052)
-script = ExtResource("1_hbghi")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1702557680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020608187, 0)
-mesh = SubResource("CapsuleMesh_hn12h")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1989127894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141911, -0.011991978, 0.037739754)
-shape = SubResource("ConvexPolygonShape3D_ihfcg")
-
-[node name="Face" type="Node3D" parent="Player" unique_id=63368135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21584821, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Face" unique_id=387127516]
-
-[node name="hand" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=877801987]
-transform = Transform3D(0.27076674, 8.642985e-05, 0.067944385, -6.8107645e-11, 0.16024819, -0.0015044296, -0.04278354, 0.00054699474, 0.43000373, 0.3134551, -0.37746477, -0.60852623)
-mesh = SubResource("SphereMesh_hn12h")
-skeleton = NodePath("../Gun")
-
-[node name="arm" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=737811874]
-transform = Transform3D(0.27076674, 8.642984e-05, 0.067944385, -6.535114e-11, 0.16024819, -0.0015044296, -0.042783536, 0.00054699474, 0.43000373, 0.31345558, -0.37746453, -0.19726753)
-mesh = SubResource("BoxMesh_ihfcg")
-skeleton = NodePath("../Gun")
-
-[node name="Gun" type="MeshInstance3D" parent="Player/Face/Camera3D" unique_id=907263716]
-transform = Transform3D(0.148867, 8.65058e-05, 0.0964725, 0, 0.160389, -0.0021361, -0.0235223, 0.000547475, 0.610551, 0.273663, -0.226329, -0.877275)
-mesh = SubResource("BoxMesh_hn12h")
-skeleton = NodePath("../../..")
-
-[node name="Muzzle" type="Node3D" parent="Player/Face/Camera3D/Gun" unique_id=1424728626]
-transform = Transform3D(1, 0, 1.1920929e-07, 0, 0.9999998, 0, 0, -1.1641532e-10, 1, 0.13300514, -0.00724411, -0.5439358)
-
-[node name="testhealthcomponent" type="Node" parent="Player" unique_id=406663423]
-script = ExtResource("4_ihfcg")
+script = ExtResource("1_3sk1a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=584631413]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 48.8365, 24.2038, 31.5859)
@@ -133,7 +84,7 @@ spot_angle = 46.82
 
 [node name="enemy" type="CharacterBody3D" parent="." unique_id=1450023706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8724194, -5.73438)
-script = ExtResource("2_rka8t")
+script = ExtResource("3_5ot28")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemy" unique_id=758268794]
 shape = SubResource("CapsuleShape3D_hbghi")
@@ -153,7 +104,7 @@ mesh = SubResource("BoxMesh_rka8t")
 path_height_offset = 0.15
 
 [node name="testhealthcomponent" type="Node" parent="enemy" unique_id=884195365]
-script = ExtResource("4_ihfcg")
+script = ExtResource("4_aerfg")
 
 [node name="LineOfSight" type="Area3D" parent="enemy" unique_id=742621064]
 transform = Transform3D(0.1563828, 0, 0.9876965, 0, 1, 0, -0.9876965, 0, 0.1563828, 0, 0.41963387, -0.41680908)
@@ -168,18 +119,18 @@ debug_shape_custom_color = Color(0.9529412, 0, 0.7019608, 1)
 debug_shape_thickness = 4
 
 [node name="TestStateMachine" type="Node" parent="enemy" unique_id=1253496250 node_paths=PackedStringArray("InitialState")]
-script = ExtResource("5_5hph3")
+script = ExtResource("5_nmsli")
 InitialState = NodePath("TestWander")
 
 [node name="TestWander" type="Node" parent="enemy/TestStateMachine" unique_id=322509806]
-script = ExtResource("6_j7kpp")
+script = ExtResource("6_betor")
 metadata/_custom_type_script = "uid://bimobxww2dmj3"
 
 [node name="TestChase" type="Node" parent="enemy/TestStateMachine" unique_id=1574192076]
-script = ExtResource("7_j7kpp")
+script = ExtResource("7_vjtdm")
 
 [node name="TestReturn" type="Node" parent="enemy/TestStateMachine" unique_id=1351507247]
-script = ExtResource("8_bjebc")
+script = ExtResource("8_bgw3c")
 metadata/_custom_type_script = "uid://b03k3gfkv5bfw"
 
 [node name="building4" type="CSGBox3D" parent="." unique_id=1929702069]
@@ -335,5 +286,8 @@ transform = Transform3D(92.019, 0, 0, 0, 0.146615, 0, 0, 0, 101.898, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_3hls8")
 use_collision = true
 
-[node name="trash" parent="." unique_id=2032317848 instance=ExtResource("9_5rr72")]
+[node name="trash" parent="." unique_id=2032317848 instance=ExtResource("9_lrvbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.951109, 1.5157018, 6.633466)
+
+[node name="Player" parent="." unique_id=718479097 instance=ExtResource("9_3sk1a")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.2038062, 2.624516, 16.807102)

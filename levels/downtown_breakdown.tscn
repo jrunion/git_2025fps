@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dx40yth4eb2nv"]
+
+[ext_resource type="PackedScene" uid="uid://b0erdgs0fby26" path="res://models/ApartmentStart.blend" id="1_ki2xd"]
+[ext_resource type="PackedScene" uid="uid://dqjcrqkdqo1jx" path="res://Assets/Player/player.tscn" id="2_6b6t4"]
+[ext_resource type="PackedScene" uid="uid://o36txemsc23u" path="res://models/car1.blend" id="3_3bfha"]
+[ext_resource type="PackedScene" uid="uid://cqbyxr826clce" path="res://models/car2.blend" id="4_cek86"]
+[ext_resource type="PackedScene" uid="uid://kulhocb8go3n" path="res://models/Counch1.blend" id="5_cek86"]
+[ext_resource type="PackedScene" uid="uid://d26udi2x1fum2" path="res://models/Counch2.blend" id="6_qtpcy"]
+[ext_resource type="PackedScene" uid="uid://bnqlkmaxrin24" path="res://models/EntertainmentCenter.blend" id="7_33ti5"]
+[ext_resource type="PackedScene" uid="uid://db72wvl2j4o7u" path="res://models/tv1.blend" id="8_dxvmh"]
+[ext_resource type="PackedScene" uid="uid://dd5lu65rso2qi" path="res://models/StreetLight.blend" id="9_33ti5"]
+[ext_resource type="PackedScene" uid="uid://b8efjnhtgfy78" path="res://models/Dumpster1.blend" id="10_dxvmh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxvmh"]
+albedo_color = Color(0.76, 0.18696004, 0.16720001, 1)
+
+[node name="DowntownBreakdown" type="Node3D" unique_id=663656174]
+
+[node name="ApartmentStart" parent="." unique_id=1482591425 instance=ExtResource("1_ki2xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0929102, 0, 1.4502733)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1025064470]
+transform = Transform3D(1006.1685, 0, 0, 0, 1.0000002, 0, 0, 0, 1685.6401, 0, 0, -750.792)
+use_collision = true
+material = SubResource("StandardMaterial3D_dxvmh")
+
+[node name="Player" parent="." unique_id=718479097 instance=ExtResource("2_6b6t4")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -14.140305, 14.113, 6.8166857)
+
+[node name="car1" parent="." unique_id=272222476 instance=ExtResource("3_3bfha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 1.9946136, -57)
+
+[node name="car2" parent="." unique_id=1960006570 instance=ExtResource("4_cek86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.25795, 6.037426, -18.07458)
+
+[node name="Counch1" parent="." unique_id=527112919 instance=ExtResource("5_cek86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.74155, 3.0787354, 6.030817)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=37713420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 86.43501, -369.93198)
+
+[node name="Counch2" parent="." unique_id=118424047 instance=ExtResource("6_qtpcy")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.4018483, 11.665658, 4.2692966)
+
+[node name="EntertainmentCenter" parent="." unique_id=1644852126 instance=ExtResource("7_33ti5")]
+transform = Transform3D(-0.67852473, 0, -0.17205863, 0, 0.7, 0, 0.17205863, 0, -0.67852473, 14.85497, 10.101083, 1.2019231)
+
+[node name="tv1" parent="." unique_id=1762609061 instance=ExtResource("8_dxvmh")]
+transform = Transform3D(0.86597055, 0, 0.2451429, 0, 0.9, 0, -0.2451429, 0, 0.86597055, 16.040516, 12.781581, 1.9856434)
+
+[node name="StreetLight" parent="." unique_id=868134347 instance=ExtResource("9_33ti5")]
+transform = Transform3D(0.18340273, 0, 0.67554677, 0, 0.7, 0, -0.67554677, 0, 0.18340273, -22.213156, 1.5000001, -67.77438)
+
+[node name="Dumpster1" parent="." unique_id=237191996 instance=ExtResource("10_dxvmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.400084, 2.7912927, -25.6745)

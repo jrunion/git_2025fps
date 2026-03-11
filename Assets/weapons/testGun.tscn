@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c75xjio56tw2w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hn12h"]
+
+[node name="Gun" type="MeshInstance3D" unique_id=927320537]
+transform = Transform3D(0.148867, 8.65058e-05, 0.0964725, 0, 0.160389, -0.0021361, -0.0235223, 0.000547475, 0.610551, 0, 0, 0)
+mesh = SubResource("BoxMesh_hn12h")
+skeleton = NodePath("../../..")
+
+[node name="Muzzle" type="Node3D" parent="." unique_id=556331007]
+transform = Transform3D(1, 0, 1.1920929e-07, 0, 0.9999998, 0, 0, -1.1641532e-10, 1, 0.13300514, -0.00724411, -0.5439358)
